@@ -1,4 +1,4 @@
-package com.example.zebli.restauranttipper;
+package com.robrousejr.universaltipper;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
