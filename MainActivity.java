@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
                 double percentage = (double)progress / 100;
                 double bill = Double.parseDouble(billinput.getText().toString());
+                // Updates Tip Amount when slider moves
                 finaloutput.setText("$" + df2.format(percentage * bill));
             }
             @Override
