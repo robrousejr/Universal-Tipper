@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Spinner dropdown = findViewById(R.id.spinner1);
-        String[] items = new String[]{"Waiter", "Bartender", "Hair Stylist"}; // items for dropdown
+        String[] items = new String[]{"Waiter", "Bartender", "Hair Stylist", "Taxi Driver", "Massage Therapist"}; // items for dropdown
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
 
@@ -141,12 +141,19 @@ public class MainActivity extends AppCompatActivity {
     // Returns tip percentage as an int
     private double percentageTip(String type, String quality) {
 
-        // TODO: ADD ALL POTENTIAL TIPS
         if(quality.equals("Good"))
         {
             switch (type){
                 case "Waiter":
                     return .20;
+                case "Bartender":
+                    return .15;
+                case "Taxi Driver":
+                    return .17;
+                case "Hair Stylist":
+                    return .18;
+                case "Massage Therapist":
+                    return .2;
             }
         }
         if(quality.equals("Okay"))
@@ -154,14 +161,30 @@ public class MainActivity extends AppCompatActivity {
             switch (type){
                 case "Waiter":
                     return .15;
+                case "Bartender":
+                    return .12;
+                case "Taxi Driver":
+                    return .14;
+                case "Hair Stylist":
+                    return .15;
+                case "Massage Therapist":
+                    return .15;
             }
         }
-        else
+        else // bad quality
         {
             switch (type)
             {
                 case "Waiter":
                     return .10;
+                case "Bartender":
+                    return .10;
+                case "Taxi Driver":
+                    return .10;
+                case "Hair Stylist":
+                    return .10;
+                case "Massage Therapist":
+                    return .1;
             }
         }
         return 0; // never going to happen, just to appease the compiler
