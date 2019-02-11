@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        final TextView textView = (TextView)findViewById(R.id.textview);
+
         tipseekbar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
@@ -110,6 +112,14 @@ public class MainActivity extends AppCompatActivity {
                 double bill = Double.parseDouble(billinput.getText().toString());
                 // Updates Tip Amount when slider moves
                 finaloutput.setText("$" + df2.format(percentage * bill));
+
+
+                // Update Text showing progress
+                int val = (progress * (seekBar.getWidth() - 2 * seekBar.getThumbOffset())) / seekBar.getMax();
+                textView.setText("" + progress + "%");
+                textView.setX(seekBar.getX() + val + seekBar.getThumbOffset() / 2);
+                //textView.setY(100); just added a value set this properly using screen with height aspect ratio , if you do not set it by default it will be there below seek bar
+
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) { }
@@ -130,6 +140,8 @@ public class MainActivity extends AppCompatActivity {
 
     // Returns tip percentage as an int
     private double percentageTip(String type, String quality) {
+
+        // TODO: ADD ALL POTENTIAL TIPS
         if(quality.equals("Good"))
         {
             switch (type){
