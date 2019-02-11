@@ -16,6 +16,9 @@ import android.widget.ToggleButton;
 
 import java.text.DecimalFormat;
 
+// TODO: DESIGN APP BETTER
+
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
