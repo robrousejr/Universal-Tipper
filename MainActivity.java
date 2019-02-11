@@ -18,7 +18,6 @@ import java.text.DecimalFormat;
 
 // TODO: DESIGN APP BETTER
 
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
